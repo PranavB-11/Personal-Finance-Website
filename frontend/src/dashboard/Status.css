@@ -42,3 +42,80 @@
     background-color: purple;
     cursor: pointer;
 }
+
+/* ------------- Modal Stuff ----------------- */
+.status-modal-content {
+    text-align: center;
+  }
+  
+  .status-modal-input-group {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .status-modal-input-group label {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 8px; 
+  }
+  
+  .status-modal-input-group input {
+    padding: 10px;
+    width: 80%; 
+    border-radius: 5px;
+    border: 2px solid #C000FF;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: white; 
+    display: block; 
+  }
+
+  .status-modal-input-group textarea {
+    width: 80%; 
+    height: 120px; 
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #C000FF;
+    box-sizing: border-box;
+    margin-top: 8px; 
+    resize: vertical; 
+    background-color: transparent;
+    color: white;
+  }
+
+  .status-modal-content h2 {
+    font-size: 24px; 
+    margin-bottom: 50px; 
+    color: #ffffff; 
+  }
+
+  .input-with-symbol {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 80%; 
+  }
+  
+  .input-with-symbol span {
+    color: white;
+    margin-right: 10px;
+  }
+  
+  .input-with-symbol input {
+    flex-grow: 1; 
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #C000FF; 
+    box-sizing: border-box;
+    background-color: transparent;
+    color: white;
+    outline: none; 
+  }
+  
+  
+  
+  
+  
