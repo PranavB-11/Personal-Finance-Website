@@ -8,6 +8,7 @@ function Status() {
             <div id="status-container">
                 <div id="status-inner-container">
                     <h1>Dashboard</h1>
+                    <p id="status-add-section">Add Section</p>
                     <DashEntry name={"Takeout Food"} budget={"low"}/>
                     <DashEntry name={"Clothes"} budget={"medium"}/>
                     <DashEntry name={"Grocery"} budget={"high"}/>

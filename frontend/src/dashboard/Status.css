@@ -26,3 +26,19 @@
     color: white;
     text-align: center;
 }
+
+#status-add-section {
+    background-color: rgb(76, 0, 76);
+    border-radius: 10px;
+    color: white;
+    margin: auto;
+    padding: 5px;
+    text-align: center;
+    transition: 0.3s;
+    width: 20%;
+}
+
+#status-add-section:hover {
+    background-color: purple;
+    cursor: pointer;
+}
