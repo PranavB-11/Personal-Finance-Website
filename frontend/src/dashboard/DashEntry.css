@@ -1,0 +1,33 @@
+/* -------- Budget Types -------- */
+
+.dash-entry-budget-low {
+    background-color: #375b3c;
+}
+
+.dash-entry-budget-medium {
+    background-color: #876c3a;
+}
+
+.dash-entry-budget-high {
+    background-color: rgb(188, 71, 71);
+}
+
+/* -------- Layout -------- */
+
+#dash-entry {
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    padding: 10px;
+}
+
+#dash-entry > h2 {
+    font-weight: normal;
+}
+
+#dash-entry-options {
+    align-items: center;
+    display: flex;
+}

@@ -9,6 +9,6 @@ import Status from './Status.jsx'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Navbar />
-    <Status />
+    <Status/>
   </React.StrictMode>,
 )
