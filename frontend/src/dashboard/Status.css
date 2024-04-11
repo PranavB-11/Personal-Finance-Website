@@ -66,24 +66,12 @@
     padding: 10px;
     width: 80%; 
     border-radius: 5px;
-    border: 2px solid #C000FF;
+    border-image: linear-gradient(to right, blue, green, purple) 1;
+    outline: none;
     box-sizing: border-box;
     background-color: transparent;
     color: white; 
     display: block; 
-  }
-
-  .status-modal-input-group textarea {
-    width: 80%; 
-    height: 120px; 
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #C000FF;
-    box-sizing: border-box;
-    margin-top: 8px; 
-    resize: vertical; 
-    background-color: transparent;
-    color: white;
   }
 
   .status-modal-content h2 {
@@ -108,7 +96,8 @@
     flex-grow: 1; 
     padding: 10px;
     border-radius: 5px;
-    border: 2px solid #C000FF; 
+    border-image: linear-gradient(to right, blue, green, purple) 1;
+    outline: none;
     box-sizing: border-box;
     background-color: transparent;
     color: white;
