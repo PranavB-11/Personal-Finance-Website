@@ -32,6 +32,24 @@
     display: flex;
 }
 
+.dash-entry-header {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.dash-entry-options {
+    display: flex;
+}
+
+.dash-entry-icon-button {
+    margin-left: 10px;
+}
+
+
 /* ------- Modal Settings --------- */
 
 .dash-entry-icon-button {
@@ -47,4 +65,64 @@
     transform: scale(1.1);
     opacity: 0.8;
 }
+
+.modal-content {
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.modal-header {
+    font-size: 24px;
+    margin-bottom: 50px;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.form-group {
+    width: 80%;
+    margin-bottom: 25px; 
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    text-align: left;
+    margin-bottom: 20px;
+    background-color: transparent;
+    outline: none;
+    border-image: linear-gradient(to right, blue, green, purple) 1;
+    color: white;
+}
+
+.add-button {
+    padding: 10px 20px;
+    background-color: #800080; 
+    color: white; 
+    font-size: 16px; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; 
+    margin-top: 20px; 
+    transition: background-color 0.3s ease; 
+}
+
+.add-button:hover {
+    background-color: #9b4dca; 
+}
+
+
+
 
