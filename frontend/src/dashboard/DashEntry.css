@@ -67,9 +67,11 @@
 }
 
 .modal-content {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
-    box-sizing: border-box;
+    text-align: center;
 }
 
 .modal-header {
@@ -100,7 +102,7 @@
     padding: 8px;
     box-sizing: border-box;
     text-align: left;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     background-color: transparent;
     outline: none;
     border-image: linear-gradient(to right, blue, green, purple) 1;
@@ -115,13 +117,76 @@
     border: none;
     border-radius: 5px;
     cursor: pointer; 
-    margin-top: 20px; 
+    margin-top: 5px; 
     transition: background-color 0.3s ease; 
 }
 
 .add-button:hover {
     background-color: #9b4dca; 
 }
+
+.delete-no-button {
+    padding: 10px 20px;
+    background-color: #800080;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; 
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.delete-no-button:hover {
+    background-color: #9b4dca; 
+}
+
+.delete-yes-button {
+    padding: 10px 20px;
+    background-color: #008000; 
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; 
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.delete-yes-button:hover {
+    background-color: #00c000; 
+}
+
+.table {
+    width: 90%; 
+    margin: 20px auto; 
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left; 
+}
+
+.table input {
+    background-color: transparent; 
+    border: none;
+    padding: 8px;
+    width: 100%; 
+    box-sizing: border-box; 
+    color: white; 
+    outline: none;
+}
+
+.table input:focus {
+    outline: none; 
+    border: 1px solid #666; 
+}
+
+
 
 
 
