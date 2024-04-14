@@ -4,26 +4,66 @@ import DashEntry from './DashEntry';
 import Modal from '../modal/modal'; 
 
 function Status() {
-    // Unified modal state
     const [modalInfo, setModalInfo] = useState({
         isOpen: false,
         name: '',
-        type: ''  // Indicates whether it's for adding a new section or showing details
+        type: ''
+    });
+    const [formData, setFormData] = useState({
+        sectionName: '',
+        budget: '',
+        startDate: '',
+        frequency: ''
     });
 
-    // Function to open the modal for any section
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        let formattedValue = value;
+    
+        // Convert budget and frequency to numbers if they are supposed to be numeric
+        if (name === 'budget' || name === 'frequency') {
+            formattedValue = value ? Number(value) : '';
+        }
+    
+        setFormData(prevState => ({
+            ...prevState,
+            [name]: formattedValue
+        }));
+    };
+    
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        console.log("Final data being sent to the server:", formData);  // Log the final form data
+        try {
+            const response = await fetch('http://localhost:2525/entries', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+            const result = await response.json();  // Move this line outside the if statement to catch server messages on errors too
+            if (!response.ok) {
+                console.error("Server responded with an error:", result);
+                throw new Error(result.message || 'Unknown error');
+            }
+            console.log("Server response:", result);
+            closeModal();
+            setFormData({ sectionName: '', budget: '', startDate: '', frequency: '' });
+        } catch (error) {
+            console.error('Error posting data:', error);
+        }
+    };
+    
+
     const openModal = (name, type) => {
-        setModalInfo({
-            isOpen: true,
-            name: name,
-            type: type
-        });
+        setModalInfo({ isOpen: true, name, type });
     };
 
-    // Function to close the modal
     const closeModal = () => {
         setModalInfo({ ...modalInfo, isOpen: false });
+        setFormData({ sectionName: '', budget: '', startDate: '', frequency: '' });
     };
+
 
     return (
         <div id="status-outer-container">
@@ -46,34 +86,33 @@ function Status() {
                 <div className="status-modal-content">
                     <h2>{modalInfo.type === 'add' ? `Add ${modalInfo.name}` : `Details for ${modalInfo.name}`}</h2>
                     {modalInfo.type === 'add' ? (
-                        <>
+                        <form onSubmit={handleSubmit}>
                             <div className="status-modal-input-group">
                                 <label htmlFor="sectionName">Section Name</label>
-                                <input type="text" id="sectionName" name="sectionName" />
+                                <input type="text" id="sectionName" name="sectionName" value={formData.sectionName} onChange={handleInputChange} />
                             </div>
-
                             <div className="status-modal-input-group">
                                 <label htmlFor="budget">Budget</label>
                                 <div className="input-with-symbol">
                                     <span>$</span>
-                                    <input type="text" id="budget" name="budget" />
+                                    <input type="text" id="budget" name="budget" value={formData.budget} onChange={handleInputChange} />
                                 </div>
                             </div>
                             <div className="status-modal-input-group">
                                 <label htmlFor="startdate">Start Date</label>
-                                <input id="startdate" name="startdate"></input>
+                                <input type="date" id="startdate" name="startdate" value={formData.startDate} onChange={handleInputChange} />
                             </div>
                             <div className="status-modal-input-group">
                                 <label htmlFor="frequency">Frequency</label>
-                                <input id="frequency" name="frequency"></input>
+                                <input type="text" id="frequency" name="frequency" value={formData.frequency} onChange={handleInputChange} />
                             </div>
-                        </>
+                            <button type="submit">Submit</button>
+                        </form>
                     ) : (
                         <p>Details content for {modalInfo.name}</p>
                     )}
                 </div>
             </Modal>
-
         </div>
     );
 }
