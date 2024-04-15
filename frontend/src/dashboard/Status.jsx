@@ -22,14 +22,14 @@ function Status() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Final data being sent to the server:", formData);  // Log the final form data
+        console.log("Final data being sent to the server:", formData); 
         try {
             const response = await fetch('http://localhost:2525/entries', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
             });
-            const result = await response.json();  // Move this line outside the if statement to catch server messages on errors too
+            const result = await response.json(); 
             if (!response.ok) {
                 console.error("Server responded with an error:", result);
                 throw new Error(result.message || 'Unknown error');
