@@ -27,7 +27,7 @@
     text-align: center;
 }
 
-#status-add-section {
+#status-add-section, #status-modal-submit-btn {
     background-color: rgb(76, 0, 76);
     border-radius: 10px;
     color: white;
@@ -38,7 +38,7 @@
     width: 20%;
 }
 
-#status-add-section:hover {
+#status-add-section:hover, #status-modal-submit-btn:hover {
     background-color: purple;
     cursor: pointer;
 }
@@ -113,5 +113,4 @@
 .add-section-input {
   text-align: center;
 }
-  
-  
+

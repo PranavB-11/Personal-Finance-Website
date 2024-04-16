@@ -83,7 +83,7 @@ function Status({ SectionList }) {
                                 <label htmlFor="frequency">Frequency (days)</label>
                                 <input type="text" id="add-section-frequency" className="add-section-input"/>
                             </div>
-                            <button type="submit" onClick={addSectionDatabase}>Submit</button>
+                            <button id='status-modal-submit-btn' type="submit" onClick={addSectionDatabase}>Submit</button>
                         </div>
                     </Modal>
                 </div>
