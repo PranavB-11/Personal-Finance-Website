@@ -1,6 +1,4 @@
-// import Cookie from 'universal-cookie';
-
-import './Login.css'
+import './Signup.css'
 
 function setCookie(name,value,days) {
     var expires = "";
@@ -12,12 +10,12 @@ function setCookie(name,value,days) {
     document.cookie = name + "=" + (value || "")  + expires + "; path=/";
 }
 
-function Login() {
-    const authenticate = async () => {
+function Signup() {
+    const signup = async () => {
         const username = document.getElementById("login-username").value
         const password = document.getElementById("login-password").value
 
-        const response = await fetch('http://localhost:3000/login', {
+        const response = await fetch('http://localhost:3000/signup', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -30,12 +28,8 @@ function Login() {
         if (responseData.success) {
             setCookie('username', username, 10)
             setCookie('password', password, 10)
-            window.location.href = '/dashboard'
+            window.location.href = '/dashboard';
         }
-    }
-
-    const signup = () => {
-        window.location.href = '/signup'
     }
 
     return (
@@ -43,15 +37,14 @@ function Login() {
             <div id="login-box-container">
                 <div id="login-box-inner-container">
                     <h1>Welcome</h1>
-                    <h2>Please Login</h2>
+                    <h2>Please Signup</h2>
                     <input placeholder="Username" id="login-username" className="login-username-box" type="text" />
                     <input placeholder="Password" id="login-password" className="login-password-box" type="password" />
-                    <button id="login-button" onClick={authenticate}>Login</button>
-                    <button id="signup-button" onClick={signup}>Signup</button>
+                    <button id="login-button" onClick={signup}>Signup</button>
                 </div>
             </div>
         </div>
     )
 }
 
-export default Login
+export default Signup

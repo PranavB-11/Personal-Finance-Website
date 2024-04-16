@@ -35,7 +35,8 @@
                     }
                 }
             }
-        }
+        },
+        "success": true
     },
     "draymond": {
         "password": "green",
@@ -43,6 +44,10 @@
     },
     "larry": {
         "password": "bird",
+        "sections": {}
+    },
+    "michael": {
+        "password": "jordan",
         "sections": {}
     }
 }
