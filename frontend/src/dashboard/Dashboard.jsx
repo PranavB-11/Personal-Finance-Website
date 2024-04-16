@@ -2,6 +2,7 @@ import { useLayoutEffect, useState } from 'react';
 
 import './Dashboard.css'
 import Navbar from './Navbar.jsx'
+import Status from './Status.jsx'
 
 function getCookie(name) {
   var nameEQ = name + "=";
@@ -16,11 +17,14 @@ function getCookie(name) {
 
 function Dashboard() {
   const [username, setUsername] = useState('')
+  const [sectionList, setSectionList] = useState([])
 
+  // Authenticate user and fetch data
   const authenticate = async () => {
     const cookieUsername = getCookie('username')
     const cookiePassword = getCookie('password')
-  
+    
+    // Get user data
     const response = await fetch('http://localhost:3000/data', {
         method: 'POST',
         headers: {
@@ -34,7 +38,16 @@ function Dashboard() {
     if (!responseData.success) {
       window.location.href = '/';
     } else {
+      // Update username
       setUsername(cookieUsername)
+      
+      // Get section data
+      const sections = []
+      for (const key in responseData.sections) {
+        sections.push(responseData.sections[key])
+        sections[sections.length - 1].name = key
+      }
+      setSectionList(sections)
     }
   }
 
@@ -45,6 +58,7 @@ function Dashboard() {
   return (
     <div>
       <Navbar username={username}/>
+      <Status SectionList={sectionList}/>
     </div>
   )
 }

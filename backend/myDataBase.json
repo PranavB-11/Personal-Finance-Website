@@ -1,41 +1,7 @@
 {
     "steph": {
         "password": "curry",
-        "sections": {
-            "clothes": {
-                "budget": "5000",
-                "frequency": "35",
-                "startDate": "32 june",
-                "description": "my shoes",
-                "purchases": {}
-            },
-            "nike": {
-                "budget": "5000",
-                "frequency": "35",
-                "startDate": "32 june",
-                "description": "my shoes",
-                "purchases": {}
-            },
-            "shoes": {
-                "purchases": {
-                    "2818gc95dfd6d7e6g9554168820e4ae6": {
-                        "name": "nike air force 1",
-                        "cost": "32",
-                        "date": "jan 21"
-                    },
-                    "99da7ce791fbba08hg0ei2cd6bd0i2de": {
-                        "name": "nike air force 1",
-                        "cost": "32",
-                        "date": "jan 21"
-                    },
-                    "j6061eadg9f1e7djb6h3bcdc9fg8cc7a": {
-                        "name": "nike air force 1",
-                        "cost": "32",
-                        "date": "jan 21"
-                    }
-                }
-            }
-        },
+        "sections": {},
         "success": true
     },
     "draymond": {

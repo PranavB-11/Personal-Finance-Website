@@ -14,11 +14,9 @@
 
 /* -------- Layout -------- */
 
-#dash-entry {
+.dash-entry {
     border-radius: 10px;
     color: white;
-    display: flex;
-    justify-content: space-between;
     margin-top: 25px;
     padding: 10px;
 }
@@ -185,9 +183,3 @@ th, td {
     outline: none; 
     border: 1px solid #666; 
 }
-
-
-
-
-
-
