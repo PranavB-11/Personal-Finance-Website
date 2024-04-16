@@ -1,0 +1,20 @@
+#navbar {
+    background-color: #49117e;
+    display: flex;
+    justify-content: space-around;
+    top: 0;
+    width: 100%;
+}
+
+#navbar > h1 {
+    color: white;
+    font-weight: normal;
+    margin: 0;
+    padding: 15px;
+    transition: 0.3s;
+}
+
+#navbar-log-out:hover {
+    color: green;
+    cursor: pointer;
+}

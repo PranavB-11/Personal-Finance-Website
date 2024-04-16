@@ -1,0 +1,193 @@
+/* -------- Budget Types -------- */
+
+.dash-entry-budget-low {
+    background-color: #375b3c;
+}
+
+.dash-entry-budget-medium {
+    background-color: #876c3a;
+}
+
+.dash-entry-budget-high {
+    background-color: rgb(188, 71, 71);
+}
+
+/* -------- Layout -------- */
+
+#dash-entry {
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    padding: 10px;
+}
+
+#dash-entry > h2 {
+    font-weight: normal;
+}
+
+#dash-entry-options {
+    align-items: center;
+    display: flex;
+}
+
+.dash-entry-header {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.dash-entry-options {
+    display: flex;
+}
+
+.dash-entry-icon-button {
+    margin-left: 10px;
+}
+
+
+/* ------- Modal Settings --------- */
+
+.dash-entry-icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.2s ease;
+    color: white;
+}
+
+.dash-entry-icon-button:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.modal-header {
+    font-size: 24px;
+    margin-bottom: 50px;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.form-group {
+    width: 80%;
+    margin-bottom: 25px; 
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    text-align: left;
+    margin-bottom: 15px;
+    background-color: transparent;
+    outline: none;
+    border-image: linear-gradient(to right, blue, green, purple) 1;
+    color: white;
+}
+
+.add-button {
+    padding: 10px 20px;
+    background-color: #800080; 
+    color: white; 
+    font-size: 16px; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; 
+    margin-top: 5px; 
+    transition: background-color 0.3s ease; 
+}
+
+.add-button:hover {
+    background-color: #9b4dca; 
+}
+
+.delete-no-button {
+    padding: 10px 20px;
+    background-color: #800080;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; 
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.delete-no-button:hover {
+    background-color: #9b4dca; 
+}
+
+.delete-yes-button {
+    padding: 10px 20px;
+    background-color: #008000; 
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; 
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.delete-yes-button:hover {
+    background-color: #00c000; 
+}
+
+.table {
+    width: 90%; 
+    margin: 20px auto; 
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left; 
+}
+
+.table input {
+    background-color: transparent; 
+    border: none;
+    padding: 8px;
+    width: 100%; 
+    box-sizing: border-box; 
+    color: white; 
+    outline: none;
+}
+
+.table input:focus {
+    outline: none; 
+    border: 1px solid #666; 
+}
+
+
+
+
+
+

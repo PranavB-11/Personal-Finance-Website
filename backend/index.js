@@ -1,9 +1,11 @@
 const bodyParser = require('body-parser')
+const cors = require('cors')
 const express = require('express')
 const { JsonDB, Config } = require('node-json-db')
 
 // Setup express app
 const app = express()
+app.use(cors())
 const jsonParser = bodyParser.json()
 const port = 3000
 
@@ -68,7 +70,7 @@ app.post('/login', jsonParser, async (req, res) => {
     }
 })
 
-app.get('/data', jsonParser, async (req, res) => {
+app.post('/data', jsonParser, async (req, res) => {
     const { username, password } = req.body
 
     // Authenticate user
@@ -81,6 +83,7 @@ app.get('/data', jsonParser, async (req, res) => {
     const key = `/${username}`
     try {
         const value = await db.getData(key)
+        value['success'] = true
         return res.json(value)
     } catch (error) {
         return res.json(fail_status)

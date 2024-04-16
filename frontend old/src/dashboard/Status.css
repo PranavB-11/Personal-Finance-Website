@@ -1,0 +1,110 @@
+/* -------- Status Container -------- */
+
+#status-outer-container {
+    margin-top: 50px;
+}
+
+#status-container {
+    border: double 2px transparent;
+    background-clip: content-box, border-box;
+    background-image: linear-gradient(#001432, #001432), 
+        linear-gradient(to right, blue, green, purple);
+    background-origin: border-box;
+    border-radius: 10px;
+
+    margin: auto;
+    width: 70%;
+}
+
+/* -------- Status Content -------- */
+
+#status-inner-container {
+    padding: 15px;
+}
+
+#status-inner-container > h1 {
+    color: white;
+    text-align: center;
+}
+
+#status-add-section {
+    background-color: rgb(76, 0, 76);
+    border-radius: 10px;
+    color: white;
+    margin: auto;
+    padding: 5px;
+    text-align: center;
+    transition: 0.3s;
+    width: 20%;
+}
+
+#status-add-section:hover {
+    background-color: purple;
+    cursor: pointer;
+}
+
+/* ------------- Modal Stuff ----------------- */
+.status-modal-content {
+    text-align: center;
+  }
+  
+  .status-modal-input-group {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .status-modal-input-group label {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 8px; 
+  }
+  
+  .status-modal-input-group input {
+    padding: 10px;
+    width: 80%; 
+    border-radius: 5px;
+    border-image: linear-gradient(to right, blue, green, purple) 1;
+    outline: none;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: white; 
+    display: block; 
+  }
+
+  .status-modal-content h2 {
+    font-size: 24px; 
+    margin-bottom: 50px; 
+    color: #ffffff; 
+  }
+
+  .input-with-symbol {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 80%; 
+  }
+  
+  .input-with-symbol span {
+    color: white;
+    margin-right: 10px;
+  }
+  
+  .input-with-symbol input {
+    flex-grow: 1; 
+    padding: 10px;
+    border-radius: 5px;
+    border-image: linear-gradient(to right, blue, green, purple) 1;
+    outline: none;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: white;
+    outline: none; 
+  }
+  
+  
+  
+  
+  
