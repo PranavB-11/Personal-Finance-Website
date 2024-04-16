@@ -91,7 +91,7 @@ app.post('/data', jsonParser, async (req, res) => {
 })
 
 app.post('/section', jsonParser, async (req, res) => {
-    const { username, password, section, budget, frequency, startDate, description } = req.body
+    const { username, password, section, budget, frequency, startDate } = req.body
     const purchases = {}
 
     // Authenticate user
@@ -102,7 +102,7 @@ app.post('/section', jsonParser, async (req, res) => {
     
     // Add details to database
     const key = `/${username}/sections/${section}`
-    const value = { budget, frequency, startDate, description, purchases }
+    const value = { budget, frequency, startDate, purchases }
     try {
         await db.push(key, value)
         return res.json(success_status)

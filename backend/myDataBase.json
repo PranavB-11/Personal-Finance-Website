@@ -1,7 +1,15 @@
 {
     "steph": {
         "password": "curry",
-        "sections": {},
+        "sections": {
+            "nike": {
+                "budget": "5000",
+                "frequency": "35",
+                "startDate": "32 june",
+                "description": "my shoes",
+                "purchases": {}
+            }
+        },
         "success": true
     },
     "draymond": {

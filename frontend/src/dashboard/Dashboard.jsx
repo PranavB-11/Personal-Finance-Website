@@ -16,6 +16,7 @@ function getCookie(name) {
 }
 
 function Dashboard() {
+  // User data
   const [username, setUsername] = useState('')
   const [sectionList, setSectionList] = useState([])
 
@@ -50,7 +51,6 @@ function Dashboard() {
       setSectionList(sections)
     }
   }
-
   useLayoutEffect(() => {
     authenticate()
   }, []);
