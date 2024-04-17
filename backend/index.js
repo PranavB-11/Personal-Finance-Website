@@ -90,6 +90,26 @@ app.post('/data', jsonParser, async (req, res) => {
     }
 })
 
+app.put('/section', jsonParser, async (req, res) => {
+    const { username, password, section, budget, frequency, startDate } = req.body
+
+    // Authenticate user
+    const success = await authenticate(username, password)
+    if (!success) {
+        return res.json(fail_status)
+    }
+
+    // Add details to database
+    try {
+        await db.push(`/${username}/sections/${section}/budget`, budget)
+        await db.push(`/${username}/sections/${section}/frequency`, frequency)
+        await db.push(`/${username}/sections/${section}/startDate`, startDate)
+        return res.json(success_status)
+    } catch (error) {
+        return res.json(fail_status)
+    }
+})
+
 app.post('/section', jsonParser, async (req, res) => {
     const { username, password, section, budget, frequency, startDate } = req.body
     const purchases = {}

@@ -59,7 +59,13 @@ function Status({ SectionList, PurchaseList }) {
                     <h1>Dashboard</h1>
                     <p id="status-add-section" onClick={addSectionOpen}>Add Section</p>
                     {SectionList.map((section, index) => (
-                        <DashEntry name={section.name} key={index} PurchaseList={PurchaseList}/>
+                        <DashEntry 
+                            name={section.name} 
+                            budget={section.budget} 
+                            frequency={section.frequency}
+                            date={section.startDate}
+                            key={index} 
+                            PurchaseList={PurchaseList}/>
                     ))}
                     <Modal isOpen={addSection} onClose={addSectionClose}>
                         <div className="status-modal-content">

@@ -19,7 +19,7 @@ function getCookie(name) {
     return null;
 }
 
-function DashEntry({ name, PurchaseList }) {
+function DashEntry({ name, PurchaseList, budget, frequency, date }) {
     // Budget color
     const budget_class = "dash-entry-budget-low"
     const outerDivClassName = `dash-entry ${budget_class}`
@@ -66,12 +66,41 @@ function DashEntry({ name, PurchaseList }) {
         }
     }
 
+    // Update section
+    const section_update = async () => {
+        // Authentication data
+        const cookieUsername = getCookie('username')
+        const cookiePassword = getCookie('password')
+
+        const section = document.getElementById('settings-section-name').value
+        const budget = document.getElementById('settings-section-budget').value
+        const startDate = document.getElementById('settings-section-date').value
+        const frequency = document.getElementById('settings-section-frequency').value
+
+        const data = {
+            'username': cookieUsername,
+            'password': cookiePassword,
+            section, budget, startDate, frequency
+        }
+        const response = await fetch('http://localhost:3000/section', {
+            method: 'PUT',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+        const responseData = await response.json()
+
+        if (responseData.success) {
+            location.reload()
+        }
+    }
+
     // Delete section
     const section_delete = async () => {
         const cookieUsername = getCookie('username')
         const cookiePassword = getCookie('password')
-
-        console.log(cookiePassword, cookieUsername)
 
         // Delete section
         const response = await fetch('http://localhost:3000/section', {
@@ -113,6 +142,7 @@ function DashEntry({ name, PurchaseList }) {
                 </div>
             </div>
 
+            {/* MODALS */}
             <Modal isOpen={isModalOpen} onClose={closeModal}>
                 <h2 className="modal-header">
                     {modalType === 'add' ? `${name}: Add Item` :
@@ -156,6 +186,27 @@ function DashEntry({ name, PurchaseList }) {
                             ))}
                         </tbody>
                     </table>
+                )}
+                {modalType === 'settings' && (
+                    <div className="modal-form">
+                        <div className="form-group">
+                            <label htmlFor="item-name">Section Name:</label>
+                            <input type="text" id="settings-section-name" name="item-name" defaultValue={name} readOnly/>
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="item-amount">Change Budget:</label>
+                            <input type="text" id="settings-section-budget" name="item-amount" defaultValue={budget}/>
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="item-date">Change Date:</label>
+                            <input type="date" id="settings-section-date" name="item-date" defaultValue={date}/>
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="item-date">Change Frequency:</label>
+                            <input type="text" id="settings-section-frequency" name="item-frequency" defaultValue={frequency}/>
+                        </div>
+                        <button className="add-button" onClick={section_update}>Confirm</button>
+                    </div>
                 )}
             </Modal>
         </div>

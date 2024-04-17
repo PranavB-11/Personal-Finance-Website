@@ -31,10 +31,10 @@
     "Lebron James": {
         "password": "Lakers",
         "sections": {
-            "Shoes": {
-                "budget": "250",
+            "Food": {
+                "budget": "300",
                 "frequency": "60",
-                "startDate": "2024-04-16",
+                "startDate": "2024-04-20",
                 "purchases": {}
             }
         },
