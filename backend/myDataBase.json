@@ -25,18 +25,17 @@
     },
     "Steph Curry": {
         "password": "Warriors",
+        "sections": {},
+        "success": true
+    },
+    "Lebron James": {
+        "password": "Lakers",
         "sections": {
-            "Food": {
+            "Shoes": {
                 "budget": "250",
-                "frequency": "31",
+                "frequency": "60",
                 "startDate": "2024-04-16",
-                "purchases": {
-                    "5jji60d2h3dihba8b6366ha5g65fhf84": {
-                        "name": "Nike Air Force 1",
-                        "cost": "32",
-                        "date": "2024-04-16"
-                    }
-                }
+                "purchases": {}
             }
         },
         "success": true

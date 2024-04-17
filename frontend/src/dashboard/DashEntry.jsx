@@ -19,7 +19,7 @@ function getCookie(name) {
     return null;
 }
 
-function DashEntry({ name }) {
+function DashEntry({ name, PurchaseList }) {
     // Budget color
     const budget_class = "dash-entry-budget-low"
     const outerDivClassName = `dash-entry ${budget_class}`
@@ -60,7 +60,10 @@ function DashEntry({ name }) {
             body: JSON.stringify(data)
         })
         const responseData = await response.json()
-        console.log(responseData)
+        
+        if (responseData.success) {
+            location.reload()
+        }
     }
 
     // Delete section
@@ -133,6 +136,26 @@ function DashEntry({ name }) {
                         </div>
                         <button className="add-button" onClick={addItem}>Add</button>
                     </div>
+                )}
+                {modalType === 'open' && (
+                    <table className="table">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Date</th>
+                                <th>$$$</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {PurchaseList[name].map((purchase, index) => (
+                                <tr key={index}>
+                                    <td><input type="text" placeholder="Item name" value={purchase.name} readOnly/></td>
+                                    <td><input type="date" placeholder="Date" value={purchase.date} readOnly/></td>
+                                    <td><input type="text" placeholder="Amount" value={purchase.cost} readOnly/></td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
                 )}
             </Modal>
         </div>

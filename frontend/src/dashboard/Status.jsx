@@ -15,7 +15,7 @@ function getCookie(name) {
     return null;
   }
 
-function Status({ SectionList }) {
+function Status({ SectionList, PurchaseList }) {
     // Add section modal
     const [addSection, setAddSection] = useState(false);
     const addSectionOpen = () => {
@@ -59,7 +59,7 @@ function Status({ SectionList }) {
                     <h1>Dashboard</h1>
                     <p id="status-add-section" onClick={addSectionOpen}>Add Section</p>
                     {SectionList.map((section, index) => (
-                        <DashEntry name={section.name} key={index}/>
+                        <DashEntry name={section.name} key={index} PurchaseList={PurchaseList}/>
                     ))}
                     <Modal isOpen={addSection} onClose={addSectionClose}>
                         <div className="status-modal-content">

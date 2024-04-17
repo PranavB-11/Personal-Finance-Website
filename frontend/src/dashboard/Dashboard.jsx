@@ -19,6 +19,7 @@ function Dashboard() {
   // User data
   const [username, setUsername] = useState('')
   const [sectionList, setSectionList] = useState([])
+  const [purchaseList, setPurchaseList] = useState({})
 
   // Authenticate user and fetch data
   const authenticate = async () => {
@@ -49,6 +50,17 @@ function Dashboard() {
         sections[sections.length - 1].name = key
       }
       setSectionList(sections)
+      
+      // Get purchase data
+      const purchases = {}
+      for (const key in responseData.sections) {
+        const sectionPurchaseList = []
+        for (const purchaseKey in responseData.sections[key].purchases) {
+          sectionPurchaseList.push(responseData.sections[key].purchases[purchaseKey])
+        }
+        purchases[key] = sectionPurchaseList
+      }
+      setPurchaseList(purchases)
     }
   }
   useLayoutEffect(() => {
@@ -58,7 +70,7 @@ function Dashboard() {
   return (
     <div>
       <Navbar username={username}/>
-      <Status SectionList={sectionList}/>
+      <Status SectionList={sectionList} PurchaseList={purchaseList}/>
     </div>
   )
 }
