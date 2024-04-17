@@ -39,5 +39,105 @@
             }
         },
         "success": true
+    },
+    "Anthony Davis": {
+        "password": "Lakers",
+        "sections": {
+            "Food": {
+                "budget": "250",
+                "frequency": "30",
+                "startDate": "2024-04-17",
+                "purchases": {
+                    "0e9a765827j37795aa3c1dj8dg827i01": {
+                        "name": "Jordan 1 Tiffany Blue",
+                        "cost": "304",
+                        "date": "2024-04-20"
+                    }
+                }
+            },
+            "Clothes": {
+                "budget": "1000",
+                "frequency": "30",
+                "startDate": "2024-04-16",
+                "purchases": {}
+            }
+        },
+        "success": true
+    },
+    "Nikola Jokic": {
+        "password": "Denver",
+        "sections": {
+            "Food": {
+                "budget": "250",
+                "frequency": "31",
+                "startDate": "2024-04-16",
+                "purchases": {
+                    "debc66hfd44b946ia3d89b60agahfad1": {
+                        "name": "Milkshake",
+                        "cost": "35",
+                        "date": "2024-04-16"
+                    },
+                    "6jc76f162c0ha2ff99h3abd0cbdg1d39": {
+                        "name": "Boba",
+                        "cost": "1002",
+                        "date": "2024-02-01"
+                    },
+                    "49bac267j8fha760h84j16g95d2hgfje": {
+                        "name": "Milkshake",
+                        "cost": "40",
+                        "date": "2024-04-02"
+                    },
+                    "6780e9hd2fa47dee24b10jf37ce11g9g": {
+                        "name": "Milkshake",
+                        "cost": "100",
+                        "date": "2024-04-14"
+                    },
+                    "9b4c85097i3f94hj1ggh3h76ihe9hee9": {
+                        "name": "Boba",
+                        "cost": "50",
+                        "date": "2024-04-15"
+                    },
+                    "40eg736ci4cf2cc4d5c7ige5b791a295": {
+                        "name": "Milkshakes",
+                        "cost": "100",
+                        "date": "2024-04-16"
+                    },
+                    "372beah25g3a92f716bgah3415e5e3a7": {
+                        "name": "Boba",
+                        "cost": "162",
+                        "date": "2024-04-08"
+                    },
+                    "ciej3ehj2g9g337d6g66d2igjbc9ci74": {
+                        "name": "Boba",
+                        "cost": "152",
+                        "date": "2024-04-13"
+                    },
+                    "8cjich5a087467fgb265hc9i4c0d69cb": {
+                        "name": "Boba",
+                        "cost": "1052",
+                        "date": "2024-04-10"
+                    }
+                }
+            },
+            "Clothes": {
+                "budget": "300",
+                "frequency": "60",
+                "startDate": "2024-04-16",
+                "purchases": {}
+            },
+            "Car": {
+                "budget": "10000",
+                "frequency": "365",
+                "startDate": "2024-04-16",
+                "purchases": {
+                    "5hha8eai0495f5ce31bbca5ehh41dc83": {
+                        "name": "Toyota Camery",
+                        "cost": "20000",
+                        "date": "2024-04-08"
+                    }
+                }
+            }
+        },
+        "success": true
     }
 }

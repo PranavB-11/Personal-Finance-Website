@@ -19,9 +19,33 @@ function getCookie(name) {
     return null;
 }
 
+function budgetClass(purchaseList, budget, frequency) {
+    budget = parseInt(budget)
+    frequency = parseInt(frequency)
+    
+    let lastDate = new Date()
+    lastDate.setDate(lastDate.getDate() - frequency)
+
+    // Sum total amount spent
+    let spend = 0
+    for (let purchase of purchaseList) {
+        if (new Date(purchase.date) > lastDate) {
+            spend += parseInt(purchase.cost)
+        }
+    }
+
+    if (spend > budget) {
+        return "dash-entry-budget-high"
+    } else if (spend > budget * 0.8) {
+        return "dash-entry-budget-medium"
+    } else {
+        return "dash-entry-budget-low"
+    }
+}
+
 function DashEntry({ name, PurchaseList, budget, frequency, date }) {
     // Budget color
-    const budget_class = "dash-entry-budget-low"
+    const budget_class = budgetClass(PurchaseList[name], budget, frequency)
     const outerDivClassName = `dash-entry ${budget_class}`
 
     // Modals
@@ -158,7 +182,7 @@ function DashEntry({ name, PurchaseList, budget, frequency, date }) {
                         </div>
                         <div className="form-group">
                             <label htmlFor="item-amount">Amount:</label>
-                            <input type="text" id="add-item-amount" name="item-amount" />
+                            <input type="number" id="add-item-amount" name="item-amount" />
                         </div>
                         <div className="form-group">
                             <label htmlFor="item-date">Date:</label>
@@ -195,7 +219,7 @@ function DashEntry({ name, PurchaseList, budget, frequency, date }) {
                         </div>
                         <div className="form-group">
                             <label htmlFor="item-amount">Change Budget:</label>
-                            <input type="text" id="settings-section-budget" name="item-amount" defaultValue={budget}/>
+                            <input type="number" id="settings-section-budget" name="item-amount" defaultValue={budget}/>
                         </div>
                         <div className="form-group">
                             <label htmlFor="item-date">Change Date:</label>
@@ -203,7 +227,7 @@ function DashEntry({ name, PurchaseList, budget, frequency, date }) {
                         </div>
                         <div className="form-group">
                             <label htmlFor="item-date">Change Frequency:</label>
-                            <input type="text" id="settings-section-frequency" name="item-frequency" defaultValue={frequency}/>
+                            <input type="number" id="settings-section-frequency" name="item-frequency" defaultValue={frequency}/>
                         </div>
                         <button className="add-button" onClick={section_update}>Confirm</button>
                     </div>

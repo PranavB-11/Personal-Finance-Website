@@ -78,7 +78,7 @@ function Status({ SectionList, PurchaseList }) {
                                 <label htmlFor="budget">Budget</label>
                                 <div className="input-with-symbol">
                                     <span>$</span>
-                                    <input type="text" id="add-section-budget" className="add-section-input"/>
+                                    <input type="number" id="add-section-budget" className="add-section-input"/>
                                 </div>
                             </div>
                             <div className="status-modal-input-group">
@@ -87,7 +87,7 @@ function Status({ SectionList, PurchaseList }) {
                             </div>
                             <div className="status-modal-input-group">
                                 <label htmlFor="frequency">Frequency (days)</label>
-                                <input type="text" id="add-section-frequency" className="add-section-input"/>
+                                <input type="number" id="add-section-frequency" className="add-section-input"/>
                             </div>
                             <button id='status-modal-submit-btn' type="submit" onClick={addSectionDatabase}>Submit</button>
                         </div>
